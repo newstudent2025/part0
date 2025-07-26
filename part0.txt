@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Write note and click "Save"
+    Browser->>Browser: Create JSON object from note
+    Browser->>Server: POST /new_note with JSON
+    Server-->>Browser: 201 Created (or saved note)
+    Browser->>Browser: Update DOM to show the new note
+part0/exercise 06
+**********************************************************************************
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/
+    server-->>browser: HTML document
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/kuva.png
+    server-->>browser: the png pic
+
+    Note right of browser: Page with a pic will be rendered
+part0/diagram0_5.md
