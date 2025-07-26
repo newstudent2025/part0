@@ -1,16 +1,4 @@
 sequenceDiagram
-    participant User
-    participant Browser
-    participant Server
-
-    User->>Browser: Write note and click "Save"
-    Browser->>Browser: Create JSON object from note
-    Browser->>Server: POST /new_note with JSON
-    Server-->>Browser: 201 Created (or saved note)
-    Browser->>Browser: Update DOM to show the new note
-part0/exercise 06
-**********************************************************************************
-sequenceDiagram
     participant browser
     participant server
 
@@ -21,4 +9,37 @@ sequenceDiagram
     server-->>browser: the png pic
 
     Note right of browser: Page with a pic will be rendered
-part0/diagram0_5.md
+***********************************************************************
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Write note and click "Save"
+    Browser->>Browser: Create JSON object from note
+    Browser->>Server: POST /new_note with JSON
+    Server-->>Browser: 201 Created (or saved note)
+    Browser->>Browser: Update DOM to show the new note
+*************************************************************************
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Write note and click "Save"
+    Browser->>Server: POST /new_note (form data)
+    Server-->>Browser: New HTML document
+    Browser->>Browser: Render full new page
+***************************************************************************
+sequenceDiagram
+    participant Browser
+    participant Server
+
+    Browser->>Server: GET /spa
+    Server-->>Browser: HTML + JavaScript
+
+    Browser->>Server: GET /notes (JSON)
+    Server-->>Browser: JSON list of notes
+
+    Browser->>Browser: Render notes dynamically
+
